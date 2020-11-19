@@ -1,9 +1,9 @@
 from __future__ import division, print_function
 # coding=utf-8
-import sys
+#import sys
 import os
-import glob
-import re
+#import glob
+#import re
 import numpy as np
 import pandas as pd
 #import soundfile
@@ -13,7 +13,8 @@ import time
 
 # Keras
 import keras
-from tensorflow.keras.models import load_model
+#from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
