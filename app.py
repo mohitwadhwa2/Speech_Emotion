@@ -181,4 +181,4 @@ if __name__ == '__main__':
     
     #app.run(debug=True,use_reloader=False)
     #app.run(debug=True,host='192.168.1.207',use_reloader=False)
-    app.run(debug=True,use_reloader=False)
+    app.run(debug=True,host='0.0.0.0',use_reloader=False)
