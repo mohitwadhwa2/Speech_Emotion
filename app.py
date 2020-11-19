@@ -10,6 +10,23 @@ import librosa
 from librosa import display
 import time
 
+import sys, os
+from unittest.mock import MagicMock
+
+sys.path.append(os.path.abspath('..'))
+
+
+# Mock module to bypass pip install
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        return MagicMock()
+
+MOCK_MODULES = [
+    'librosa', 'librosa.display']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+
+
 # Keras
 import keras
 #from tensorflow.keras.models import load_model
