@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Simple Recorder </h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="audioUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="audioUpload" accept=".wav">
+    </form>
+
+    <div class="audio-section" style="display:none;">
+        <div class="aud-preview"> 
+            <div id="audioPreview">
+            </div> 
+        </div> 
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
