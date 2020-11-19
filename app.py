@@ -24,15 +24,15 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 
 
-MODEL_PATH1 = r'C:/Users/mohit.wadhwa/Desktop/Internship Mentor/Interns work/final_codes/Final/Model Files-20200630T135947Z-001/Model Files/CNN_1D.h5'
+MODEL_PATH1 = 'models/CNN_1D.h5'
 model1 = load_model(MODEL_PATH1)
 model1._make_predict_function()      
 
-MODEL_PATH2 = r'C:/Users/mohit.wadhwa/Desktop/Internship Mentor/Interns work/final_codes/Final/Model Files-20200630T135947Z-001/Model Files/cnn_1dshallow_8out'
+MODEL_PATH2 = 'models/cnn_1dshallow_8out'
 model2 = load_model(MODEL_PATH2)
 model2._make_predict_function() 
 
-MODEL_PATH3 = r'C:/Users/mohit.wadhwa/Desktop/Internship Mentor/Interns work/final_codes/Final/Model Files-20200630T135947Z-001/Model Files/VGG_50_epoch.h5'
+MODEL_PATH3 = 'models/VGG_50_epoch.h5'
 model3 = load_model(MODEL_PATH3)
 model3._make_predict_function() 
 
@@ -181,4 +181,4 @@ if __name__ == '__main__':
     
     #app.run(debug=True,use_reloader=False)
     #app.run(debug=True,host='192.168.1.207',use_reloader=False)
-    app.run(debug=True,host='0.0.0.0',use_reloader=False)
+    app.run(debug=True,use_reloader=False)
