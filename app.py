@@ -6,8 +6,8 @@ import os
 #import re
 import numpy as np
 import pandas as pd
-import librosa
-from librosa import display
+#import librosa
+#from librosa import display
 import time
 
 import sys, os
@@ -68,8 +68,8 @@ def cal_power(X, sample_rate):
   power = (power-85.64)/151.32
   return power
   
-def get_dur(file):
-  return librosa.get_duration(filename=file)
+#def get_dur(file):
+#  return librosa.get_duration(filename=file)
 
 def set_sr(audio_duration):
   if(audio_duration>=5):
@@ -82,7 +82,7 @@ def set_sr(audio_duration):
   return d,s
 
 #Extract features (mfcc, chroma, mel) from a sound file
-def extract_feature_1D(X, sample_rate):
+'''def extract_feature_1D(X, sample_rate):
 
   stft=np.abs(librosa.stft(X))  # Getting the Short Term Fourier Transform (STFT)
   result=np.array([])  # Makes an empty result array 
@@ -96,20 +96,20 @@ def extract_feature_1D(X, sample_rate):
   mel=normalize(mel)
   result=np.hstack((result, mel))  # Appends mel to result array
   result = result.reshape(1,180,1)
-  return result
+  return result'''
  
-def extract_feature_2D(data, sample_rate):
+'''def extract_feature_2D(data, sample_rate):
   # dur, sample_rate = set_sr(librosa.get_duration(filename=file))
   # data, sample_rate = librosa.load(file, sr = sample_rate, duration = dur)
   mfcc = librosa.feature.mfcc(y=data, sr=sample_rate, n_mfcc=13)
   delta_mfcc = librosa.feature.delta(mfcc, order=2)
   delta_mfcc = normalize(delta_mfcc)
   delta_mfcc = delta_mfcc.reshape(1,13,157,1)
-  return delta_mfcc
+  return delta_mfcc'''
 
 
 # Break Audio Function
-def break_audio(file):
+'''def break_audio(file):
   lis = []
   sr = 16000
   count = 0
@@ -130,7 +130,7 @@ def break_audio(file):
       lis.append(arr)
       count+=1
 
-  return lis,count,sr
+  return lis,count,sr'''
 
 
 def model_predict(file, model1, model2, model3):  
